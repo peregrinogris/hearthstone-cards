@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Hearthstone Cards</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <!--link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css"-->
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/base-min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/tables-min.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Hearthstone Cards</h1>
+        <div id="cards">
+            <input class="search" placeholder="Search" />
+            <button class="sort" data-sort="name">
+                Sort by name
+            </button>
+            <button class="sort" data-sort="cost">
+                Sort by cost
+            </button>
+            <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Mana</th>
+                        <th>Name</th>
+                        <th>Attack</th>
+                        <th>Health/Duration</th>
+                        <th>Text</th>
+                        <th>Race</th>
+                        <th>Set</th>
+                        <th>image</th>
+                        <th>Raw</th>
+                    </tr>
+                <thead>
+                <tbody class="list"></tbody>
+            </table>
+        <div>
+        <script src="./js/zepto.min.js"></script>
+        <script src="./js/list.min.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>
+
