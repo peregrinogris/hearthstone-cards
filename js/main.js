@@ -1,5 +1,4 @@
-CARDS_URL = 'http://wow.gamimg.com/images/hearthstone/cards/enus/original/'
-CARDS_URL = './cards/'
+CARDS_URL = 'http://wow.zamimg.com/images/hearthstone/cards/enus/original/'
 
 if (!localStorage.getItem('cards')){
     $.getJSON('./AllSets.enUS.json', function(cards){
