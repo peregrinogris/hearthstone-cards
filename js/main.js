@@ -37,7 +37,7 @@ function setUpTable(){
                     }
 
                     if (card.hasOwnProperty('text')) {
-                        row.append($('<td class="text">' + card.text.replace(/\$([0-9]+)/, '*$1*' ) + '</td>'));
+                        row.append($('<td class="text">' + card.text.replace(/\$([0-9]+)/g, '*$1*' ) + '</td>'));
                     } else {
                         row.append($('<td></td>'));
                     }
