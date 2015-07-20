@@ -10,7 +10,7 @@ if (!localStorage.getItem('cards')){
 }
 
 function setUpTable(){
-    window.cards = JSON.parse(localStorage.getItem('cards'));
+    var cards = JSON.parse(localStorage.getItem('cards'));
     var table = $('tbody');
     $('#hide-uncollectible').prop('checked', true);
     $('.search').val('');
