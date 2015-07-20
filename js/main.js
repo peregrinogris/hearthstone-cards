@@ -18,7 +18,7 @@ function setUpTable(){
         if (set_name != 'Debug' && set_name != "Promotion") {
             $.each(set, function(index, card){
                 if (card.hasOwnProperty('cost') && card.hasOwnProperty('rarity') && card.type != "Hero Power" && card.type != "Hero") {
-                    var row = $('<tr class="' + (card.collectible ? 'collectible' : 'uncollectible hide') + '">');
+                    var row = $('<tr class="' + (card.collectible ? 'collectible' : 'uncollectible') + '">');
                     row.append($('<td class="cost text-center">' + card.cost + '</td>'));
                     row.append($('<td class="name">' + card.name + '</td>'));
 
@@ -69,9 +69,9 @@ function setUpTable(){
     var cardList = new List('content', options);
 
     $('#hide-uncollectible').on('change', function(e){
-        $('.uncollectible').removeClass('hide');
+        $('.cards').removeClass('hide-uncollectible');
         if (this.checked) {
-            $('.uncollectible').addClass('hide');
+            $('.cards').addClass('hide-uncollectible');
         }
     });
 }
