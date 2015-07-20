@@ -1,0 +1,24 @@
+.controls {
+    padding-bottom: 10px;
+}
+.cards .set, .cards .name {
+    white-space: nowrap;
+}
+.free, .common {
+    color:#888888;
+}
+.rare {
+    color:#0070dd;
+}
+.epic {
+    color:#a335ee;
+}
+.legendary {
+    color:#ff8000;
+}
+.uncollectible {
+    opacity:0.4;
+}
+.hide-uncollectible .uncollectible {
+    display: none;
+}
