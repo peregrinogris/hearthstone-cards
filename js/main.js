@@ -25,6 +25,7 @@ function setUpTable(){
     var table = $('tbody');
     $('#hide-uncollectible').prop('checked', true);
     $('.search').val('');
+    $('.loading').remove();
     $.each(cards, function(set_name, set){
         if (set_name != 'Debug' && set_name != "Promotion") {
             $.each(set, function(index, card){
