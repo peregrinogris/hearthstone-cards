@@ -1,12 +1,23 @@
 CARDS_URL = 'http://wow.zamimg.com/images/hearthstone/cards/enus/original/'
+CARDS_VERSION = '2015-06-27';
 
-if (!localStorage.getItem('cards')){
+if (downloadRequired()){
     $.getJSON('./AllSets.enUS.json', function(cards){
         localStorage.setItem('cards', JSON.stringify(cards));
+        localStorage.setItem('version', CARDS_VERSION);
         setUpTable();
     });
 } else {
     setUpTable();
+}
+
+function downloadRequired(){
+    cardsPresent = localStorage.hasOwnProperty('cards')
+    if (cardsPresent) {
+        return localStorage.getItem('version') != CARDS_VERSION
+    } else {
+        return true
+    }
 }
 
 function setUpTable(){
