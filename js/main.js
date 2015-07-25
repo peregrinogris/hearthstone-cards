@@ -23,29 +23,29 @@ function setUpTable(){
                     row.append($('<td class="name">' + card.name + '</td>'));
 
                     if (card.hasOwnProperty('attack')) {
-                        row.append($('<td class="text-center">' + card.attack + '</td>'));
+                        row.append($('<td class="attack text-center">' + card.attack + '</td>'));
                     } else {
-                        row.append($('<td></td>'));
+                        row.append($('<td class="attack empty"></td>'));
                     }
 
                     if (card.hasOwnProperty('health')) {
-                        row.append($('<td class="text-center">' + card.health + '</td>'));
+                        row.append($('<td class="health text-center">' + card.health + '</td>'));
                     } else if (card.hasOwnProperty('duration')) {
-                        row.append($('<td class="text-center">' + card.durability + '</td>'));
+                        row.append($('<td class="durability text-center">' + card.durability + '</td>'));
                     } else {
-                        row.append($('<td></td>'));
+                        row.append($('<td class="health empty"></td>'));
                     }
 
                     if (card.hasOwnProperty('text')) {
                         row.append($('<td class="text">' + card.text.replace(/\$([0-9]+)/g, '*$1*' ) + '</td>'));
                     } else {
-                        row.append($('<td></td>'));
+                        row.append($('<td class="text empty"></td>'));
                     }
 
                     if (card.hasOwnProperty('race')) {
                         row.append($('<td class="race">' + card.race + '</td>'));
                     } else {
-                        row.append($('<td class="race"></td>'));
+                        row.append($('<td class="race empty"></td>'));
                     }
 
                     row.append($('<td class="set ' + card.rarity.toLowerCase() + '">' + set_name + '</td>'));
@@ -56,6 +56,9 @@ function setUpTable(){
         }
     });
 
+    // Simple mobile check to change a bit the search behavior
+    isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
     // Don't submit form on button press
     $('form').on('submit', function(e){
         e.preventDefault();
@@ -63,10 +66,20 @@ function setUpTable(){
 
     // Filters
     var options = {
-      valueNames: [ 'name', 'cost', 'race', 'text']
+      valueNames: [ 'name', 'cost', 'race', 'text'],
+      searchClass: isMobile ? null : 'search',
+      page: isMobile ? 20 : 200
     };
 
     var cardList = new List('content', options);
+
+    // If on mobile, don't use the `keyup` default search, as it triggers too
+    // much and is usually hidden by the keyboard, so use `change` event.
+    if (isMobile) {
+        $('.search').on('change', function(){
+            cardList.search(this.value);
+        })
+    }
 
     $('#hide-uncollectible').on('change', function(e){
         $('.cards').removeClass('hide-uncollectible');

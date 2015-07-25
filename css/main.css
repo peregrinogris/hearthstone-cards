@@ -22,3 +22,67 @@
 .hide-uncollectible .uncollectible {
     display: none;
 }
+
+/* Mobile styles */
+@media only screen and (max-width : 480px){
+    table {
+        border: 1px solid black;
+    }
+    td {
+        float: left;
+        clear: both;
+        text-align: center;
+        width: 288px;
+    }
+    td::before {
+        float: left;
+        width: 50px;
+        padding: 5px;
+        text-align: left;
+    }
+
+    td.cost::before {
+        content: 'Cost: ';
+    }
+    td.name::before {
+        content: 'Name: ';
+    }
+    td.attack::before {
+        content: 'Attack: ';
+    }
+    td.health::before {
+        content: 'Health: ';
+    }
+    td.durability::before {
+        content: 'Durability: ';
+    }
+    td.text::before {
+        content: 'Text: ';
+    }
+    td.race::before {
+        content: 'Race: ';
+    }
+    td.set::before {
+        content: 'Set: ';
+    }
+    td.empty {
+        display: none;
+    }
+
+    tr td:first-of-type, tr:first-of-type {
+        border-top: none;
+    }
+    tr {
+        border-top: 3px solid black;
+    }
+    table.cards td.text {
+        white-space: normal !important;
+    }
+    th {
+        display: none;
+    }
+    .name {
+        background: #333;
+        font-weight: bold;
+    }
+}
