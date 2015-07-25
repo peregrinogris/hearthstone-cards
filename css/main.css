@@ -1,0 +1,92 @@
+.controls {
+    padding-bottom: 10px;
+}
+.cards .set, .cards .name {
+    white-space: nowrap;
+}
+.free, .common {
+    color:#888888;
+}
+.rare {
+    color:#0070dd;
+}
+.epic {
+    color:#a335ee;
+}
+.legendary {
+    color:#ff8000;
+}
+.uncollectible {
+    opacity:0.4;
+}
+.hide-uncollectible .uncollectible {
+    display: none;
+}
+
+/* Mobile styles */
+@media only screen and (max-width : 480px){
+    h1 {
+        text-align: center;
+    }
+    table {
+        border: 1px solid black;
+        margin-top: 5px;
+    }
+    td {
+        float: left;
+        clear: both;
+        text-align: center;
+        width: 288px;
+    }
+    td::before {
+        float: left;
+        width: 50px;
+        padding-bottom: 1px;
+        text-align: left;
+    }
+
+    td.cost::before {
+        content: 'Cost: ';
+    }
+    td.name::before {
+        content: 'Name: ';
+    }
+    td.attack::before {
+        content: 'Attack: ';
+    }
+    td.health::before {
+        content: 'Health: ';
+    }
+    td.durability::before {
+        content: 'Durability: ';
+    }
+    td.text::before {
+        content: 'Text: ';
+    }
+    td.race::before {
+        content: 'Race: ';
+    }
+    td.set::before {
+        content: 'Set: ';
+    }
+    td.empty {
+        display: none;
+    }
+
+    tr td:first-of-type, tr:first-of-type {
+        border-top: none;
+    }
+    tr {
+        border-top: 3px solid black;
+    }
+    table.cards td.text {
+        white-space: normal !important;
+    }
+    th {
+        display: none;
+    }
+    .name {
+        background: #333;
+        font-weight: bold;
+    }
+}
