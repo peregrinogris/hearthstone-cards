@@ -1,4 +1,4 @@
-CARDS_URL = 'http://wow.zamimg.com/images/hearthstone/cards/enus/original/'
+CARDS_URL = 'http://hsci.peregrinogris.com.ar/'
 CARDS_VERSION = '2015-06-27';
 
 if (downloadRequired()){
