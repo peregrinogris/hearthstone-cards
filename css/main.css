@@ -23,6 +23,13 @@
     display: none;
 }
 
+h1.title {
+    text-align: center;
+}
+h1.title img {
+    max-width: 100%;
+}
+
 footer {
     text-align: center;
 }
@@ -40,7 +47,7 @@ footer {
         float: left;
         clear: both;
         text-align: center;
-        width: 288px;
+        width: 100%;
     }
     td::before {
         float: left;
