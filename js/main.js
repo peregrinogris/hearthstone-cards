@@ -1,5 +1,5 @@
 CARDS_URL = 'http://hsci.peregrinogris.com.ar/'
-CARDS_VERSION = '2015-06-27';
+CARDS_VERSION = '2015-08-25';
 
 if (downloadRequired()){
     $.getJSON('./AllSets.enUS.json', function(cards){
